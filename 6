@@ -1,0 +1,27 @@
+#include <stdio.h> //incluir a biblioteca
+
+int calcularResultado (int v[], int n); //função com um vetor e variável, ambas inteiras
+
+int main() {
+    
+    int vetor [5], i, resultado; //três variáveis, um vetor com 5 espaços, um para o loop e um para exibir a função
+    
+    for (i =0; i<5; i++){ // loop para rodar 5 vezes
+        vetor [i] = i *2; //vetor 
+    }
+    
+    resultado = calcularResultado (vetor,5); //o resultado imprime a função
+ printf("\n O resultado é %d", resultado); //impressão do resultado: 0,2,4,6,8
+    
+    return 0; //testar se rodou tudo
+}
+
+int calcularResultado (int v[], int n){ //estrutura da função
+    int i, soma = 0; //variáveis para loop e para somar
+    
+    for (i = 0; i<n; i++){ // loop para rodar 5 vezes
+        soma += v[i]; //soma do vetor
+    }
+    
+    return soma; //retorna o resultado do loop: 0, 2, 6, 12,20
+}

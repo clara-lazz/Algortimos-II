@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+//Ana Clara 02AM 424
+
+bool primos(int n) {
+    if (n <= 1) {
+        return false;
+    }
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int somaPrimos(int n){
+	int soma = 0;
+    int contador = 0;
+    int numero = 2;
+
+    while (contador < n) {
+        if (primos(numero)) {
+            soma += numero;
+            contador++;
+        }
+        numero++;
+    }
+
+    return soma;
+}
+
+int main(){
+	
+	int n;
+	
+	printf("Insira quantos números primos você deseja calcular:");
+	scanf("%d",&n);
+	
+	int resultado = somaPrimos(n);
+	printf("A soma dos %d números primos é %d", n, resultado);
+	
+	
+	return 0;
+}

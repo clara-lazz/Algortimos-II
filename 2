@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+// Ana Clara 02AM 424
+
+void fibonacci(int n) {
+    if (n < 1) return; 
+    
+    int penultimo = 0;
+    int ultimo = 1;
+
+    printf("%d ", penultimo);
+    if (n > 1) {
+        printf("%d ", ultimo);
+    }
+
+    for (int i = 3; i <= n; i++) {
+        int atual = penultimo + ultimo;
+        printf("%d ", atual);
+        penultimo = ultimo;
+        ultimo = atual;
+    }
+}
+
+int main() {
+    int n;
+
+    printf("Insira um valor inteiro: ");
+    scanf("%d", &n);
+
+    fibonacci(n);
+
+    return 0;
+}
+
+/* Relatório: Essa foi mais fácil de interpretar e conseguir expressar o calculo,
+porém precisei utilizar o chat gpt para encontrar um erro no processo. Não estava 
